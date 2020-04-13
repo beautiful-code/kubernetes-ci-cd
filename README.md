@@ -262,17 +262,17 @@ Push a change to your fork. Run the job again. View the changes.
 
 ## Part 3
 
+Modified for Kubernetes Helm, not Clasical Helm.
+
 ### Step1
 
-Initialize Helm. This will install Tiller (Helm's server) into our Kubernetes cluster.
-
-`helm init --wait --debug; kubectl rollout status deploy/tiller-deploy -n kube-system`
+Go to Step 2
 
 #### Step2
 
 We will deploy the etcd operator onto the cluster using a Helm Chart.
 
-`helm install stable/etcd-operator --version 0.8.0 --name etcd-operator --debug --wait`
+`helm install etcd-operator stable/etcd-operator --version 0.10.3  --debug --wait`
 
 #### Step3
 

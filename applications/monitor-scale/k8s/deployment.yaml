@@ -15,13 +15,16 @@ spec:
 
 ---
 
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: monitor-scale
   labels:
     app: monitor-scale
 spec:
+  selector:
+    matchLabels:
+      app: monitor-scale
   strategy:
     type: Recreate
   template:

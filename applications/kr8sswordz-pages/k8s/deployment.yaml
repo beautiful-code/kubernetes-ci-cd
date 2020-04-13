@@ -13,14 +13,19 @@ spec:
     tier: kr8sswordz
   type: NodePort
 
+
+
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: kr8sswordz
   labels:
     app: kr8sswordz
 spec:
+  selector:
+    matchLabels:
+      app: kr8sswordz
   strategy:
     type: Recreate
   template:
