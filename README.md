@@ -239,6 +239,15 @@ Under the Pipeline section at the bottom, change the **Definition** to be **Pipe
 
 Change the **SCM** to **Git**. Change the **Repository URL** to be the URL of your forked Git repository, such as `https://github.com/[GIT USERNAME]/kubernetes-ci-cd`. Click **Save**. On the left, click **Build Now** to run the new pipeline.
 
+Learnings
+1) I switched from the Hyperkit hypervisor to Virtual box. The Hyperkit
+set up VM was having DNS issues, and this manifested while Jenkins was
+trying to download the repo.
+
+2) kubernetesDeploy directive in Jenkinsfile was failing. The fix that
+worked was upgrading the pipeline and kubernetes related plugin in
+Jenkins.
+
 #### Step16
 
 After all pipeline stages are colored green as complete, view the Hello-Kenzan application.
